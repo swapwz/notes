@@ -16,8 +16,7 @@ def before_request():
 
 @app.teardown_request
 def teardown_request(exception):
-    if hasattr(g, 'db'):
-        g.db.dispose()
+    db.disconnect(app.config['DATABASE'])
 
 
 app.register_blueprint(home)

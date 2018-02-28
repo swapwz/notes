@@ -13,6 +13,5 @@ def homepage():
 
 @home.route('/favicon.ico')
 def favicon():
-    print "hello home"
     return send_from_directory(os.path.join(home.root_path, 'static'), 
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')

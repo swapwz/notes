@@ -1,8 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-from notes import config
+import os
+
 from notes.model import db
+from notes import config
 
 
 if __name__ == '__main__':
-    db.init(config.SQLITE_DB_PATH)
+    try:
+        if not os.path.exists(config.DB_LOCATION):
+            os.mkdir(config.DB_LOCATION)
+    except Exception as e:
+        print e
+    else:
+        db.create_tables(config.DATABASE)

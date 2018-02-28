@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 DEBUG = True
-SQLITE_DB_PATH = '/var/run/notes/notes.db'
+DB_LOCATION = '/var/run/notes'
+DB_NAME = 'notes.db'
+DATABASE = 'sqlite:///%s/%s' % (DB_LOCATION, DB_NAME)
 SECRET_KEY = 'yoursecretkey'

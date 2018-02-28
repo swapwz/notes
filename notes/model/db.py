@@ -1,17 +1,37 @@
 # -*- coding: UTF-8 -*-
 
-from sqlite3 import dbapi2 as sqlite3
+from sqlalchemy import *
 
 
-def init(path):
-    db = connect(path)
-    with open('notes/model/sql/schema.sql', 'r') as f:
-        db.cursor().executescript(f.read()) 
-    db.commit()
+metadata = MetaData()
+
+notes = Table('notes', metadata,
+    Column('id', Integer, autoincrement=True, primary_key=True),
+    Column('note', String(1024), nullable=False),
+    Column('publish_date', DateTime, nullable=False),
+    Column('visits', Integer, nullable=False),
+    Column('user_id', Integer, nullable=False),
+)
+
+users = Table('users', metadata,
+    Column('id', Integer, autoincrement=True, primary_key=True),
+    Column('name', String(32), nullable=False),
+    Column('passwd', String(128), nullable=False),
+    Column('email', String(128), nullable=False),
+    Column('sex', String(1), nullable=True),
+    Column('description', String(256), nullable=True)
+)
 
 
-def connect(path):
-    """ Connects to the specific database. """
-    db = sqlite3.connect(path)
-    db.row_factory = sqlite3.Row
-    return db
+def create_tables(url):
+    engine = create_engine(url)
+    metadata.create_all(engine)
+
+
+def drop_tables(url):
+    engine = create_engine(url)
+    metadata.drop_all(engine)
+
+
+def connect(url):
+    return create_engine(url)

@@ -13,4 +13,5 @@ if __name__ == '__main__':
     except Exception as e:
         print e
     else:
+        print "Create tables for notes"
         db.create_tables(config.DATABASE)

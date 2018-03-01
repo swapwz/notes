@@ -1,16 +1,13 @@
 # -*- coding: UTF-8 -*-
 
 from sqlalchemy import *
-from sqlalchemy.ext.declarative import declarative_base
-
-
-Base = declarative_base()
+from .db import Base
 
 
 class Note(Base):
     __tablename__ = 'notes'
 
-    id = Column('id', primary_key=True)
+    id = Column('id', Integer, primary_key=True)
     note = Column('note', String(1024), nullable=False)
     publish_date = Column('publish_date', DateTime, nullable=False)
     visits = Column('visits', Integer, nullable=False)

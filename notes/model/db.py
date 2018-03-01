@@ -2,6 +2,7 @@
 
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 from flask import g
 
 # Register tables
@@ -40,13 +41,13 @@ def drop_tables(url):
     put_engine()
 
 
-def connect(url):
+def get_session(url):
     engine = get_engine(url)
-    conn = engine.connect()
-    return conn
+    db_session = sessionmaker(bind=engine)
+    return db_session()
 
 
-def disconnect(url):
-    if hasattr(g, 'db'):
-        g.db.close()
+def put_session():
+    if hasattr(g, 'session'):
+        g.session.close()
     put_engine()

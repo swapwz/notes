@@ -4,5 +4,7 @@
 {% endblock %}
 {% block body %}
   {{ super() }}
-  <p>  Write anything anywhere
+  {% for note in notes %}
+      <div><p> {{ note }} </div> 
+  {% endfor %}
 {% endblock %}

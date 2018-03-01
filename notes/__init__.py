@@ -11,12 +11,12 @@ app.config.from_pyfile('config.py')
 
 @app.before_request
 def before_request():
-    g.db = db.connect(app.config['DATABASE'])
+    g.session = db.get_session(app.config['DATABASE'])
 
 
 @app.teardown_request
 def teardown_request(exception):
-    db.disconnect(app.config['DATABASE'])
+    db.put_session()
 
 
 app.register_blueprint(home)

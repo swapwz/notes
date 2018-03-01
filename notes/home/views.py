@@ -8,7 +8,8 @@ from . import home
 
 @home.route('/')
 def homepage():
-    return render_template('home.html')
+    notes = ["hello", "world"]
+    return render_template('home.html', notes=notes)
 
 
 @home.route('/favicon.ico')

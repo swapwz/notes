@@ -1,0 +1,9 @@
+body {
+    background: #87CEFA;
+}
+
+div[name=note] {
+    border: black solid thin; 
+    outline:#f0f0f0 solid thin; 
+    font-size:14px;
+}

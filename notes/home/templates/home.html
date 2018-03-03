@@ -5,6 +5,6 @@
 {% block body %}
   {{ super() }}
   {% for note in notes %}
-      <div><p> {{ note }} </div> 
+      <div name=note><p> {{ note }} </div> 
   {% endfor %}
 {% endblock %}

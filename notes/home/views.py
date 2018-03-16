@@ -8,7 +8,8 @@ from . import home
 
 @home.route('/')
 def homepage():
-    notes = ["hello", "world"]
+    notes = ["Ni hao shi jie", "hello world"]
+    
     return render_template('home.html', notes=notes)
 
 

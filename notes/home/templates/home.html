@@ -4,7 +4,11 @@
 {% endblock %}
 {% block body %}
   {{ super() }}
-  {% for note in notes %}
-      <div name=note><p> {{ note }} </div> 
-  {% endfor %}
+  <div id=main-box>
+      <div id=content-box>
+	 {% for note in notes %}
+	    <div class="notebox"><p> {{ note }} </div> 
+	 {% endfor %}
+      </div>
+  </div>
 {% endblock %}

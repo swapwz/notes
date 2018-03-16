@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 
 from flask import Flask, g
+from flask import url_for
+from flask import redirect
 
 from .home import home
 from .model import db
@@ -18,5 +20,9 @@ def before_request():
 def teardown_request(exception):
     db.put_session()
 
+app.register_blueprint(home, url_prefix="/home")
 
-app.register_blueprint(home)
+
+@app.route('/')
+def index():
+    return redirect(url_for('home.homepage'))

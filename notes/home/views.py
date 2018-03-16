@@ -8,6 +8,7 @@ from . import home
 
 @home.route('/')
 def homepage():
+    # get all notes from the DB
     notes = ["Ni hao shi jie", "hello world"]
     
     return render_template('home.html', notes=notes)

@@ -4,7 +4,11 @@ from flask import Flask, g
 from flask import url_for
 from flask import redirect
 
+# home page
 from .home import home
+# upload 
+from .upload import upload 
+
 from .model import db
 
 
@@ -21,7 +25,7 @@ def teardown_request(exception):
     db.put_session()
 
 app.register_blueprint(home, url_prefix="/home")
-
+app.register_blueprint(upload, url_prefix="/upload")
 
 @app.route('/')
 def index():

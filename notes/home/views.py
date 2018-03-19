@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import os
 
 from flask import render_template
@@ -9,7 +10,11 @@ from . import home
 @home.route('/')
 def homepage():
     # get all notes from the DB
-    notes = ["Ni hao shi jie", "hello world"]
+    notes = ["Xiao Hua", 
+             "Hello",
+             "You are very beautiful",
+             "Time is fly",
+             "Have your fun."]
     
     return render_template('home.html', notes=notes)
 

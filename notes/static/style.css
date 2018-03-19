@@ -1,17 +1,23 @@
 body {
     background: gray;
+    background-image: url("arbor.jpg");
 }
+
+p {
+    margin: 2px;
+}
+
+
 #main-box {
     position: relative;
-    left: 10%;
-    width: 80%;
+    left: 25%;
     height: 100%;
 }
 
 #content-box {
     position: relative;
     float: left;
-    width: 100%;
+    width: 50%;
     height: 80%;
     background: #87CEFA;
     text-align: left;
@@ -21,10 +27,9 @@ body {
 
 
 .notebox {
-    left: 10%;
-    border-style: solid dotted dashed double;
-    margin: 20px;
-    width: 80%; 
+    border-style: dotted;
+    margin: 3% 5%;
+    width: 90%; 
     height: 200px;
     background-color: white;
 }

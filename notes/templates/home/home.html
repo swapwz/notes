@@ -6,7 +6,7 @@
   {{ super() }}
   <div id=main-box>
       <div id=header>
-      <a>发布心得 </a>
+      <a href="{{ url_for('edit.index') }}">发布心得 </a>
       </div>
       <div id=content-box>
 	 {% for note in notes %}

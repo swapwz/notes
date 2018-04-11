@@ -38,6 +38,8 @@ def install():
             # ignore file exists error
             if e[0] != 17:
                 print("Install failed: ", e)
+            else:
+                print(e)
 
 
 def uninstall():

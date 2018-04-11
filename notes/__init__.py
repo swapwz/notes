@@ -25,10 +25,10 @@ def create_app():
         db.put_session()
 
     # register all blueprints
-    from notes import home, upload, edit
+    from notes import home, upload, note 
     app.register_blueprint(home.bp)
     app.register_blueprint(upload.bp)
-    app.register_blueprint(edit.bp)
+    app.register_blueprint(note.bp)
 
     @app.route('/')
     def index():

@@ -17,9 +17,3 @@ def index():
              "Time is fly",
              "Have your fun."]
     return render_template('home/home.html', notes=notes)
-
-
-@bp.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(bp.root_path, 'static'), 
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')

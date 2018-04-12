@@ -3,5 +3,5 @@
 
 
 # 安装步骤
-		# python setup.py install
-		# python setup.py initdb
+- # python setup.py install
+- # python setup.py initdb

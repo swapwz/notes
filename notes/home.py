@@ -11,9 +11,5 @@ bp = Blueprint('home', __name__, url_prefix='/home')
 @bp.route('/')
 def index():
     # get all notes from the DB
-    notes = ["Xiao Hua", 
-             "Hello",
-             "You are very beautiful",
-             "Time is fly",
-             "Have your fun."]
+    notes = ["晚上18点20分准时在楼下等你"]
     return render_template('home/home.html', notes=notes)

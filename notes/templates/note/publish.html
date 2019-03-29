@@ -1,13 +1,23 @@
 {% extends 'layout.html' %}
-
 {% block title %}
-创建笔记:)
+散播谣言
+{% endblock %}
+
+{% block navigator %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('home.index') }}">首页</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="#">发布</a>
+</li>
 {% endblock %}
 
 {% block body %}
-<form method="post">
-   <label>开始吧, 伙计</label>
-   <textarea name="content" id="content">{{ request.form['content'] }}</textarea>
-   <input type="submit" value="发布">
-</form>
+<div class=main-box>
+   <form method="post">
+     <label>开始吧, 伙计</label>
+     <textarea name="content" id="content">{{ request.form['content'] }}</textarea>
+     <input type="submit" value="发布">
+   </form>
+</div>
 {% endblock %}

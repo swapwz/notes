@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html lang="gb2312">
+<html lang="cn">
   <head>
-     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
-     <meta http-equiv="Content-Type" content="text/html charset=UTF-8;" />
-     <title>{% block title %}{% endblock %}</title>
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="keywords" content="matrix">
+     <title>{% block title %}Matrix{% endblock %}</title>
   </head>
   <body>
-  {% block body %}
-    <center>
-    <h1>Online Notes</h1>
-    </center>
-  {% endblock %}
+    <!-- Header div defintions -->    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Matrix's matrix</h1>
+            <p class="lead">我虽然走得很慢，但我从不后退半步！</p>
+        </div>
+    </div>
+    <div class=container-fluid>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="nav nav-pills">
+                {% block navigator %}
+                <li class="nav-item active">
+                     <a class="nav-link" href="#">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('note.publish') }}">发布</a>
+                </li>
+                {% endblock  %}
+            </ul>
+        </nav>
+    </div>
+    {% block body %}
+        <div class="container text-center">
+            <h1>温故而知新</h1>
+        </div>
+    {% endblock %}
+    <div class="jumbotron text-center">
+        版权归Matrix所有，请随意转载
+    </div>
   </body>
 </html>

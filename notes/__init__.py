@@ -15,10 +15,10 @@ def create_app():
         return render_template('page_not_found.html'), 404
 
     # database tools
-    from .model import db
+    import db
     @app.before_request
     def before_request():
-        g.session = db.get_session(app.config['DATABASE'])
+        g.session = db.get_session()
 
     @app.teardown_request
     def teardown_request(exception):

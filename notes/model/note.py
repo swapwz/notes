@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
+from notes.db import Base
 from sqlalchemy import *
-from .db import Base
 
 
 class Note(Base):
@@ -14,7 +14,7 @@ class Note(Base):
     user_id = Column('user_id', Integer, nullable=False) 
 
 
-    def __repr__():
-        return "<Notes(id = %s, note = '%s', publish_date = '%s', visits = '%s', user_id = '%s')>" %  \
+    def __repr__(self):
+        return "<Notes(id = %s, note = '%r', publish_date = '%s', visits = '%s', user_id = '%s')>" %  \
                (self.id, self.note, self.publish_date, self.visits, self.user_id)
     

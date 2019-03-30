@@ -5,7 +5,7 @@ import os
 import shutil
 import sys
 
-from notes.model import db
+from notes import db
 from notes import config
 
 
@@ -53,11 +53,11 @@ def initdb():
             os.mkdir(config.DB_LOCATION)
 
         print("Create tables for notes")
-        db.create_tables(config.DATABASE)
+        db.create_tables()
 
         if not os.path.exists(config.UPLOAD_DIR):
             print("Create upload directory")
-            os.mkdir(config.DB_LOCATION)
+            os.mkdir(config.UPLOAD_DIR)
     except Exception as e:
         print(e) 
 

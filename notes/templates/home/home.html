@@ -1,18 +1,11 @@
 {% extends "layout.html" %}
 {% block title %}
-在线笔记
+Matrix's
 {% endblock %}
 {% block body %}
-  {{ super() }}
-  <div id=main-box>
-      <div id=header>
-      <a href="{{ url_for('note.publish') }}">创建笔记</a>
-      </div>
-      <div id=content-box>
-	 {% for note in notes %}
-	    <div class="notebox"><p> {{ note }} </div> 
-	 {% endfor %}
-      </div>
-      <div id=footer><div>
-  </div>
+    {% for m in msgs %}
+    <div class=row>
+    <h3>{{ m.content }}<span class="badge badge-secondary">{{ m.date }}</span></h3>
+    </div>
+    {% endfor %}
 {% endblock %}

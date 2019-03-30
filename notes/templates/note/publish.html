@@ -13,11 +13,8 @@
 {% endblock %}
 
 {% block body %}
-<div class=main-box>
-   <form method="post">
-     <label>开始吧, 伙计</label>
+   <form method="post"">
      <textarea name="content" id="content">{{ request.form['content'] }}</textarea>
      <input type="submit" value="发布">
    </form>
-</div>
 {% endblock %}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cn">
   <head>
-      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
+     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +9,13 @@
      <title>{% block title %}Matrix{% endblock %}</title>
   </head>
   <body>
+     <!-- jQuery library -->
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+     <!-- Popper JS -->
+     <script src=" {{ url_for('static', filename='js/popper.min.js') }}"></script>
+     <!-- Bootstrap JS -->
+     <script src=" {{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
     <!-- Header div defintions -->    
     <div class="jumbotron jumbotron-fluid">
         <div class="container">

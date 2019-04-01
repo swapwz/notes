@@ -4,8 +4,30 @@ Matrix's
 {% endblock %}
 {% block body %}
     {% for m in msgs %}
-    <div class=row>
-    <h3>{{ m.content }}<span class="badge badge-secondary">{{ m.date }}</span></h3>
-    </div>
+        <div class="container">
+            <h5 class="bg-dark text-success">{{ m.content }}</h5>
+        </div>
+        <div class="container">
+            <a href="#" class="text-info">日期: <span class="badge badge-pill badge-danger">{{ m.date }}</span></a>
+            <a href="#">删除</a>
+        </div>
     {% endfor %}
+    
+    <div class="container">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">prev</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="/home/next?offset=3"> next</a></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            $(".page-item").click(function(){
+                $("li.page-item").removeClass("active")
+                $(this).addClass("active")
+            });
+        });
+    </script>
 {% endblock %}

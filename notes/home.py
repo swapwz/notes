@@ -19,8 +19,9 @@ bp = Blueprint('home', __name__, url_prefix='/home')
 def delete_msg(msg_id):
     session = db.get_session()
     msg = session.query(Note).filter(Note.id==msg_id).first()
-    session.delete(msg)
-    session.commit()
+    if msg:
+        session.delete(msg)
+        session.commit()
     return
 
 

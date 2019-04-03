@@ -7,7 +7,7 @@ Matrix's
         <div class="container">
             <pre class="bg-dark text-success">{{ m.content }}</pre>
             <a class="text-info"><span class="badge badge-pill badge-danger">{{ m.date }}</span></a>
-            <a href="/home/delete?id={{ m.id }}">删除</a>
+            <a href="{{ url_for('home.delete', id=m.id) }}">删除</a>
             <hr/>
         </div>
     {% endfor %}
@@ -16,7 +16,7 @@ Matrix's
         <ul class="pagination">
             {% for i in range(0, count, 10) %}
                 <li class="page-item">
-                    <a class="page-link" href="/home/next?offset={{ i }}">
+                    <a class="page-link" href="{{ url_for('home.next', offset=i) }}">
                         {{ i // 10 + 1 }}
                     </a>
                 </li>
